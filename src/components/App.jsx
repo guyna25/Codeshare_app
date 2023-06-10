@@ -41,13 +41,14 @@ const App = () => {
   const getRoute = (snippet) => {
     // console.log(snippet);
     // console.log("============");
+    const snippetId = snippet.id;
     const e = <SnippetsContext.Provider key={"codeSnippets"} value={codeSnippets}>
       <CodingGround snippet={snippet.code} /> 
     </SnippetsContext.Provider>
                      
     return <Route
-            key={snippet.id}
-            path={`editor/:${snippet.id}/`}
+            key={snippetId}
+            path={`editor/:snippetId/`}
             element={e}
           />;
   }
@@ -63,4 +64,3 @@ const App = () => {
 };
 
 export default App;
-
