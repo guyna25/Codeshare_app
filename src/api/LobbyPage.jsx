@@ -1,21 +1,21 @@
 import React, {useEffect} from "react";
-// import { Link } from "react-router-dom";
-import CodeBlock from "./CodeBlockLink";
-import Header from "./Header";
+import CodeBlock from "../components/CodeSnippetLink";
+import Header from "../components/Header";
 import "./LobbyPage.css";
 
-/*
-Lobby page (no need for authentication) :
-The page should contain the title “Choose code block” and 
-a list of at least 4 items which represents code blocks, each item can be represented by a name (for example - “Async case”)
-Clicking on an item should take the user to the code block page with the details of the code block he chooses.
-*/
-
+/**
+ * Lobby component to contain the links to code snippets
+ * @param {Function} setSnippet function to set the snippets data after retrieval
+ * @returns 
+ */
 export default function LobbyPage(props) {
 
+  //usable for online CRUD of snippets
   useEffect(() => {
     props.setSnippets(props.snippets);
   }, [props.snippets]); // watch for changes in props.snippets
+
+
   return (
     <>
       <Header />

@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from "react";
 import "./App.css";
-import LobbyPage from "../api/LobbyPage";
-import CodingGround from "../api/CodingGround";
+import LobbyPage from "./api/LobbyPage";
+import CodingGround from "./api/CodingGround";
+import SnippetsContext from "./api/SnippetsContext";
 import {Route, Routes, BrowserRouter } from "react-router-dom";
-import SnippetsContext from "../api/SnippetsContext";
+
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
