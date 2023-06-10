@@ -28,3 +28,4 @@ firebase.json
 public/logo512.png
 public/logo192.png
 functions/.eslintrc.js
+.env

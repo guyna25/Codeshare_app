@@ -1,0 +1,25 @@
+{
+    "codeSnippets": [
+      {
+        "title": "Snippet 1",
+        "code": "console.log('Hello, World!');"
+      },
+      {
+        "title": "Snippet 2",
+        "code": "const sum = (a, b) => a + b;"
+      },
+      {
+        "title": "Snippet 3",
+        "code": "for (let i = 0; i < 10; i++) {\n  console.log(i);\n}"
+      },
+      {
+        "title": "Snippet 4",
+        "code": "const names = ['Alice', 'Bob', 'Charlie'];\nconsole.log(names[1]);"
+      },
+      {
+        "title": "Snippet 5",
+        "code": "const person = {\n  name: 'John',\n  age: 30,\n  city: 'New York'\n};"
+      }
+    ]
+  }
+  
