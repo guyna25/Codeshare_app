@@ -15,7 +15,7 @@ import { getDatabase, ref, child, get } from "firebase/database";
 const firebaseConfig = JSON.parse(process.env.REACT_APP_FIREBASE_CONFIG);
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 
 const App = () => {
 
@@ -35,7 +35,7 @@ const App = () => {
     }).catch((error) => {
       console.error(error);
     });
-  }, []);
+  }, [dbRef]);
 
   //TODO add config path file  instead of hardcoded paths
   const getRoute = (snippet) => {

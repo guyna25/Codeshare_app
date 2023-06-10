@@ -1,0 +1,10 @@
+.codingpage {
+    height: calc(100vh - 80px);
+  }
+  .CodeMirror-scroll {
+    padding: 16px 32px;
+  }
+  .cm-s-dracula.CodeMirror {
+    padding: 0px;
+    height: calc(100vh - 80px);
+  }

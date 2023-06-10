@@ -1,0 +1,11 @@
+.homepage {
+    display: flex;
+    padding: 0px 64px;
+    justify-content: center;
+    flex-direction: column;
+    height: calc(100vh - 80px);
+    color: aliceblue;
+    background-color: rgb(9, 9, 9);
+  }
+
+  

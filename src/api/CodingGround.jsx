@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect} from "react";
+import {sublime} from "@uiw/codemirror-theme-sublime"; 
 import CodeMirror from '@uiw/react-codemirror';
 import { getDatabase, ref, onValue, set, increment, get} from "firebase/database"; // Import increment, decrement
 import {useParams} from 'react-router-dom';
@@ -17,13 +18,13 @@ const CodingGround = () => {
   const snippetRef = ref(db, `codeSnippets/${snippetId}/code`);
   const activeUsersRef = ref(db, `codeSnippets/${snippetId}/activeUsers`); // Create a reference for activeUsers
   useEffect(() => {
-    console.log("UseEffect start");
+    // console.log("UseEffect start");
     set(activeUsersRef, increment(1)).then(() => {
-      console.log("Then after increment");
+      // console.log("Then after increment");
       get(activeUsersRef).then((snapshot) => {
-        console.log(`Then after activeUsersRef ${snapshot.val()}`);
+        // console.log(`Then after activeUsersRef ${snapshot.val()}`);
         if (snapshot.val() > 1) {
-          console.log(`accessLevel: ${accessLevel}`);
+          // console.log(`accessLevel: ${accessLevel}`);
           setAccessLevel("write");
         }
       });
@@ -39,6 +40,7 @@ const CodingGround = () => {
       set(activeUsersRef, increment(-1));
       window.removeEventListener('beforeunload', handleUnload);
     };
+    // eslint-disable-next-line
   }, []);
   
   // Monitor the active users in the coding ground and the current code
@@ -70,17 +72,20 @@ const CodingGround = () => {
         });
     }
   };
-  //TODO add codemirror theme
   return (
     <div>
       <Header/>
       <div>
       <CodeMirror
       value={enteredCode}
-      height="200px"
+      height="1200px"
       extensions={[javascript({ jsx: true })]}
       readOnly={accessLevel === 'read'} // Set readOnly prop based on access level
-      onChange={enteredCodeChangeHandler}/>
+      onChange={enteredCodeChangeHandler}
+      theme={
+        sublime
+      }
+      />
       </div>
     </div>
   );

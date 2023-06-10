@@ -2,6 +2,7 @@ import React, {useEffect} from "react";
 // import { Link } from "react-router-dom";
 import CodeBlock from "./CodeBlockLink";
 import Header from "./Header";
+import "./LobbyPage.css";
 
 /*
 Lobby page (no need for authentication) :
@@ -22,8 +23,8 @@ export default function LobbyPage(props) {
         <p className="title">Choose code block.</p>
 
         <p className="sub-title">
-          Simple Realtime Code Sharing Editor App. Using Firebase Realtime
-          Database and Code Mirror as Editor.
+          This is a simple realtime code sharing app. The app is built with React, utilizes Firebase Realtime
+          Database.
         </p>
         {props.snippets.map((snippet) => {
           
